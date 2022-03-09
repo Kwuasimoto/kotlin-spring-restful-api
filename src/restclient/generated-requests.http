@@ -1,0 +1,56 @@
+// Get Person Base Route
+###
+GET http://{{host}}/
+
+<> 2022-03-09T121053.200.json
+<> 2022-03-09T120652.200.json
+<> 2022-03-09T105017.200.json
+<> 2022-03-09T105006.200.txt
+
+
+// Get All Persons
+###
+GET http://{{host}}/{{endpoint}}
+
+<> 2022-03-09T123335.200.json
+<> 2022-03-09T121119.200.json
+
+
+// Get Person By ID
+###
+GET http://{{host}}/{{endpoint}}/2
+
+<> 2022-03-09T123428.200.json
+
+
+// Create Person Record
+###
+POST http://{{host}}/{{endpoint}}
+Content-Type: application/json
+
+{
+  "name": "Douglas",
+  "lastName": "Shank"
+}
+
+<> 2022-03-09T123210.201.json
+<> 2022-03-09T122717.201.json
+<> 2022-03-09T122616.201.json
+<> 2022-03-09T122541.201.json
+
+// Update Person Record
+###
+PUT http://{{host}}/{{endpoint}}
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Thomas",
+  "lastName": "Kwuasimoto"
+}
+
+<> 2022-03-09T123600.202.json
+
+// Delete Peroson Record
+###
+DELETE http://{{host}}/{{endpoint}}/2
