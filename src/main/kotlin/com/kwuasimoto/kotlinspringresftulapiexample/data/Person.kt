@@ -1,4 +1,4 @@
-package com.kwausimoto.kotlinspringrestfulapiexample.data
+package com.kwuasimoto.kotlinspringresftulapiexample.data
 
 import javax.persistence.*
 

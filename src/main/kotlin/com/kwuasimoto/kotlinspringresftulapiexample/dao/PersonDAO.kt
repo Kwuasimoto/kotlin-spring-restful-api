@@ -1,6 +1,6 @@
-package com.kwausimoto.kotlinspringrestfulapiexample.dao
+package com.kwuasimoto.kotlinspringresftulapiexample.dao
 
-import com.kwausimoto.kotlinspringrestfulapiexample.data.Person
+import com.kwuasimoto.kotlinspringresftulapiexample.data.Person
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

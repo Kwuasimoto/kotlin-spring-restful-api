@@ -1,6 +1,6 @@
-package com.kwausimoto.kotlinspringrestfulapiexample.resource
+package com.kwuasimoto.kotlinspringresftulapiexample.resource
 
-import com.kwausimoto.kotlinspringrestfulapiexample.dto.ErrorResponse
+import com.kwuasimoto.kotlinspringresftulapiexample.dto.ErrorResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler

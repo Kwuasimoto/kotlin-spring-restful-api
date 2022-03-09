@@ -1,12 +1,14 @@
-package com.kwausimoto.kotlinspringrestfulapiexample.service
+package com.kwuasimoto.kotlinspringresftulapiexample.service
 
-import com.kwausimoto.kotlinspringrestfulapiexample.dao.PersonDAO
-import com.kwausimoto.kotlinspringrestfulapiexample.data.Person
-import com.kwausimoto.kotlinspringrestfulapiexample.dto.AddPersonRequest
-import com.kwausimoto.kotlinspringrestfulapiexample.dto.PersonResponse
-import com.kwausimoto.kotlinspringrestfulapiexample.dto.UpdatePersonRequest
-import com.kwausimoto.kotlinspringrestfulapiexample.transformer.AddPersonRequestTransformer
-import com.kwausimoto.kotlinspringrestfulapiexample.transformer.toPersonResponse
+import com.kwuasimoto.kotlinspringresftulapiexample.dao.PersonDAO
+import com.kwuasimoto.kotlinspringresftulapiexample.data.Person
+import com.kwuasimoto.kotlinspringresftulapiexample.dto.AddPersonRequest
+import com.kwuasimoto.kotlinspringresftulapiexample.dto.PersonResponse
+import com.kwuasimoto.kotlinspringresftulapiexample.dto.UpdatePersonRequest
+import com.kwuasimoto.kotlinspringresftulapiexample.transformer.AddPersonRequestTransformer
+import com.kwuasimoto.kotlinspringresftulapiexample.transformer.toPersonResponse
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 import java.util.*
 
@@ -19,8 +21,8 @@ class PersonManagementServiceImpl(
     override fun findById(id: Long): PersonResponse? =
         this.findPersonById(id).get().toPersonResponse()
 
-    override fun findAll(): List<PersonResponse> =
-        this.personDAO.findAll().map(Person::toPersonResponse)
+    override fun findAll(pageable: Pageable): Page<PersonResponse> =
+        this.personDAO.findAll(pageable).map(Person::toPersonResponse)
 
     override fun save(addPersonRequest: AddPersonRequest): PersonResponse =
         this.saveOrUpdate(addPersonRequestTransformer.transform(addPersonRequest))

@@ -1,7 +1,7 @@
-package com.kwausimoto.kotlinspringrestfulapiexample.transformer
+package com.kwuasimoto.kotlinspringresftulapiexample.transformer
 
-import com.kwausimoto.kotlinspringrestfulapiexample.data.Person
-import com.kwausimoto.kotlinspringrestfulapiexample.dto.AddPersonRequest
+import com.kwuasimoto.kotlinspringresftulapiexample.data.Person
+import com.kwuasimoto.kotlinspringresftulapiexample.dto.AddPersonRequest
 import org.springframework.stereotype.Component
 
 @Component

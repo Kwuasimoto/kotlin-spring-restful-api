@@ -1,10 +1,12 @@
-package com.kwausimoto.kotlinspringrestfulapiexample.resource
+package com.kwuasimoto.kotlinspringresftulapiexample.resource
 
-import com.kwausimoto.kotlinspringrestfulapiexample.dto.AddPersonRequest
-import com.kwausimoto.kotlinspringrestfulapiexample.dto.PersonResponse
-import com.kwausimoto.kotlinspringrestfulapiexample.dto.UpdatePersonRequest
-import com.kwausimoto.kotlinspringrestfulapiexample.resource.PersonResourceImpl.Companion.BASE_PERSON_URL
-import com.kwausimoto.kotlinspringrestfulapiexample.service.PersonManagementService
+import com.kwuasimoto.kotlinspringresftulapiexample.dto.AddPersonRequest
+import com.kwuasimoto.kotlinspringresftulapiexample.dto.PersonResponse
+import com.kwuasimoto.kotlinspringresftulapiexample.dto.UpdatePersonRequest
+import com.kwuasimoto.kotlinspringresftulapiexample.resource.PersonResourceImpl.Companion.BASE_PERSON_URL
+import com.kwuasimoto.kotlinspringresftulapiexample.service.PersonManagementService
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -23,9 +25,9 @@ class PersonResourceImpl(
         .body(this.personManagementService.findById(id))
 
     @GetMapping
-    override fun findAll(): ResponseEntity<List<PersonResponse?>> = ResponseEntity
+    override fun findAll(pageable: Pageable): ResponseEntity<Page<PersonResponse>> = ResponseEntity
         .status(HttpStatus.OK)
-        .body(this.personManagementService.findAll())
+        .body(this.personManagementService.findAll(pageable))
 
     @PostMapping
     override fun save(@RequestBody addPersonRequest: AddPersonRequest): ResponseEntity<PersonResponse?> {

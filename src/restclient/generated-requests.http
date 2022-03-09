@@ -23,20 +23,36 @@ GET http://{{host}}/{{endpoint}}/2
 <> 2022-03-09T123428.200.json
 
 
+// Utilize Pageable interface to fetch 2 Users per page
+###
+GET http://{{host}}/{{endpoint}}/?size=2
+
+
+// Get the 5th page
+###
+GET http://{{host}}/{{endpoint}}/?size=2&page=5
+
+
+// Sort
+###
+GET http://{{host}}/{{endpoint}}/?size=5&sort=id,desc
+
+
 // Create Person Record
 ###
 POST http://{{host}}/{{endpoint}}
 Content-Type: application/json
 
 {
-  "name": "Douglas",
-  "lastName": "Shank"
+  "name": "Test",
+  "lastName": "User 18"
 }
 
 <> 2022-03-09T123210.201.json
 <> 2022-03-09T122717.201.json
 <> 2022-03-09T122616.201.json
 <> 2022-03-09T122541.201.json
+
 
 // Update Person Record
 ###
@@ -50,6 +66,7 @@ Content-Type: application/json
 }
 
 <> 2022-03-09T123600.202.json
+
 
 // Delete Peroson Record
 ###
